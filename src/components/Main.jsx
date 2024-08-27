@@ -8,9 +8,23 @@ const Main = () => {
     const user = { id: 1, name: "John Doe", age: 25 };
 
     // Array of object
-    const users = [{ id: 1, name: "John Doe", age: 25 }, { id: 2, name: "Alice", age: 16 },
-    { id: 3, name: "Alex Smith", age: 32 }, { id: 4, name: "Jeniffer Doe", age: 30 }]
+    const [users, setUsers] = useState(
+        [{ id: 1, name: "John Doe", age: 25 },
+    { id: 2, name: "Alice", age: 16 },
+    { id: 3, name: "Alex Smith", age: 32 },
+    { id: 4, name: "Jeniffer Doe", age: 30 }])
 
+
+    const handleAddItem = (newUser) => {
+
+        // Add the newUser in the array using array spread operator
+        // Create a userId, add the userId into newUser using object spreadOperator
+        // Update the users using setter (setUsers)
+
+        const userId = users.length === 0 ? 1 : users[users.length-1].id +1
+        setUsers([...users, {...newUser, id: userId}])
+        
+    }
     return (
         <div>
             <h1 style={{ color: 'blue', fontSize: '40px' }}>Welcome to my app</h1>
@@ -24,7 +38,7 @@ const Main = () => {
             <Counter initialValue={10} minValue={7} />
 
             <hr />
-            <AddForm />
+            <AddForm handleAdd={handleAddItem} />
             <hr />
             <h2>User List</h2>
             <ul>

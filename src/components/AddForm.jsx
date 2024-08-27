@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const AddForm = () => {
+// handleAdd refers to props.handleAdd (object destructuring)
+const AddForm = ({handleAdd}) => {
     const [formData, setFormData] = useState({
         name: '',
         age: ''
@@ -20,6 +21,8 @@ const AddForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault() // Stop the default POST behaviour of browser / don't refresh the page
         console.log(formData) // to verify data added by user
+
+        handleAdd(formData); // Call the props by passing the data to the parent
 
         setFormData({
             name:'',
