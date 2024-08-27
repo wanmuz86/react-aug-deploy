@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Counter from './Counter'
 import UserInfo from './UserInfo';
 import AddForm from './AddForm';
@@ -23,7 +23,7 @@ const Main = () => {
 
         const userId = users.length === 0 ? 1 : users[users.length-1].id +1
         setUsers([...users, {...newUser, id: userId}])
-        
+
     }
     return (
         <div>
