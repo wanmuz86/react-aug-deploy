@@ -7,6 +7,13 @@ const UserInfo = ({ user }) => {
             <p>User Id: {id}</p>
             <p>Name: {name}</p>
             <p>Age: {age}</p>
+            {
+                age > 18 
+                ?
+                <p>Welcome to the portal</p>
+                :
+                <p>You are not allowed to enter the portal</p>
+            }
         </div>
     )
 }
