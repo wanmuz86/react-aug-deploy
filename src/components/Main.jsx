@@ -3,6 +3,7 @@ import Counter from './Counter'
 import UserInfo from './UserInfo';
 import AddForm from './AddForm';
 import GetComponent from './GetComponent';
+import PostComponent from './PostComponent';
 
 const Main = () => {
     // object
@@ -61,6 +62,8 @@ const Main = () => {
             <UserInfo user={user} /> */}
         <hr />
         <GetComponent/>
+        <hr />
+        <PostComponent/>
         </div>
     )
 }
