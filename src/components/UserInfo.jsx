@@ -2,7 +2,7 @@ import React from 'react'
 
 const UserInfo = ({ user , handleDelete}) => {
     const {id, name, age} = user;
-    // const deletePressed = () => handleDelete(user.id)
+   //  const deletePressed = () => handleDelete(user.id)
     return (
         <div>
             <p>User Id: {id}</p>
@@ -15,7 +15,7 @@ const UserInfo = ({ user , handleDelete}) => {
                 :
                 <p>You are not allowed to enter the portal</p>
             }
-            <button onClick={() => handleDelete(user.id)}>Delete User</button>
+            <button onClick={() => handleDelete(id)}>Delete User</button>
         </div>
     )
 }

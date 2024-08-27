@@ -5,7 +5,7 @@ import AddForm from './AddForm';
 
 const Main = () => {
     // object
-    const user = { id: 1, name: "John Doe", age: 25 };
+    // const user = { id: 1, name: "John Doe", age: 25 };
 
     // Array of object
     const [users, setUsers] = useState(
@@ -52,12 +52,13 @@ const Main = () => {
             <h2>User List</h2>
             <ul>
                 {
-                    users.map(val => <li key={val.id}><UserInfo user={val} /></li>)
+                    users.map(val => <li key={val.id}><UserInfo user={val} 
+                        handleDelete={handleDeleteUser} /></li>)
                 }
             </ul>
-            <hr />
+            {/* <hr />
             <h2>User Information</h2>
-            <UserInfo user={user} handleDelete={handleDeleteUser}/>
+            <UserInfo user={user} /> */}
         </div>
     )
 }
