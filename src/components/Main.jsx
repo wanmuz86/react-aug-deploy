@@ -1,6 +1,7 @@
 import React from 'react'
 import Counter from './Counter'
 import UserInfo from './UserInfo';
+import AddForm from './AddForm';
 
 const Main = () => {
     // object
@@ -23,14 +24,17 @@ const Main = () => {
             <Counter initialValue={10} minValue={7} />
 
             <hr />
+            <AddForm />
+            <hr />
             <h2>User List</h2>
-            {
-                users.map(val=><li key={val.id}><UserInfo user={val}/></li>)
-            }
+            <ul>
+                {
+                    users.map(val => <li key={val.id}><UserInfo user={val} /></li>)
+                }
+            </ul>
             <hr />
             <h2>User Information</h2>
             <UserInfo user={user} />
-
         </div>
     )
 }
