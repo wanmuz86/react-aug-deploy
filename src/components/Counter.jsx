@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Counter = () => {
+// Object destructuring props = {"initialValue":number, "minValue":number}
+// const {initialValue, minValue} = props
+
+const Counter = ({initialValue, minValue}) => {
 
     // State - A variable within a component AND it is changeable
     // To retrieve the value (getter) = counter
     // To set the value (setter) = setCounter
     // 0 => Initial value
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(initialValue);
     // Create a variable 
     // getter = message
     // setter = setMessage
@@ -21,8 +24,10 @@ const Counter = () => {
     }
 
     const decrement = () => {
-        if (counter == 0) {
-            setMessage("Number cannot be less than 0")
+        // In JS, you have == which means value comparison "0" == 0 (true)
+        // === strict equality   "0" === 0 (false)
+        if (counter === minValue) {
+            setMessage(`Number cannot be less than ${minValue}`)
         } else {
             setCounter(counter - 1)
         }
