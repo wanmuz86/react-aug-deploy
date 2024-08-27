@@ -25,6 +25,15 @@ const Main = () => {
         setUsers([...users, {...newUser, id: userId}])
 
     }
+
+    const handleDeleteUser = (id) => {
+        // handle the delete function filter
+
+        const updatedUsers = users.filter(val=> val.id !== id)
+        setUsers(updatedUsers)
+
+    }
+
     return (
         <div>
             <h1 style={{ color: 'blue', fontSize: '40px' }}>Welcome to my app</h1>
@@ -48,7 +57,7 @@ const Main = () => {
             </ul>
             <hr />
             <h2>User Information</h2>
-            <UserInfo user={user} />
+            <UserInfo user={user} handleDelete={handleDeleteUser}/>
         </div>
     )
 }
